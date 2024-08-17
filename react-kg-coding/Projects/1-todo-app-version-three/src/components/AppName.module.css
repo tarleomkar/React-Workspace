@@ -1,0 +1,22 @@
+.otHeading {
+    font-weight: 700;
+    font-size: 45px;
+    margin: 10px;
+    margin-bottom: 25px
+}
+
+input {
+    width: 100%;
+}
+
+.container{
+    text-align: left;
+}
+
+.ot-row {
+    margin: 10px 5px;
+}
+
+.ot-button {
+    min-width: 80px;
+}
