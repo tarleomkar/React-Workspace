@@ -1,13 +1,17 @@
-/* .kg-item {
+.kg-item {
     background-color: khaki;
 }
 
 .kg-span {
     font-weight: 500;
-    color: orange;
+    color: rgb(255, 81, 0);
 }
 
-.food-heading {
+/* .food-heading {
     background-color: silver;
     color: brown;
 } */
+
+.button {
+    float: right;
+}

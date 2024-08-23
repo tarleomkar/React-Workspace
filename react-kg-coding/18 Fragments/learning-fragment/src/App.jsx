@@ -1,37 +1,42 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import FoodItems from "./components/FoodItems";
+import ErrorMessage from "./components/ErrorMessage";
+import Container from "./components/Container";
+import FoodInput from "./components/FoodInput";
 
 function App() {
-  // let foodItems = ['Dal', 'Green vegitables', 'Chai Aur Code', 'Milk', 'PavBhaji']
-  let foodItems = [];
-  // ***** Conditional Rendering *****
-  // 1. If-else Statement
-  // if(foodItems.length === 0)
-  // {
-  //   return <h3>I am Hungry</h3>
-  // }
-  // We using Ternary operator with help of expression
+  const foodItems = [
+    "Dal",
+    "Green vegetables",
+    "Chai Aur Code",
+    "Milk",
+    "PavBhaji",
+  ];
 
-  let emptyMessage = foodItems.length === 0 ? <h3>I am still Hungry.</h3>: null;
-
+  let textToShow = "Food Item Entered by user";
+  // const foodItems = [];
   return (
     <>
-      <h1>Healthy Food</h1>
-      {/* 2. With Ternary Operator */}
-      {/* {foodItems.length === 0 ? <h3>I am still Hungry.</h3>: null} */}
-      {/* or */}
-      {/* {emptyMessage} */}
-      {/* 3. Logical operator */}
-      {foodItems.length === 0 && <h3>I am still Hungry.</h3>}
-      <ul class="list-group">
-        {/* <li class="list-group-item">Dal</li>
-        <li class="list-group-item">Green vegitables</li>
-        <li class="list-group-item">Chai Aur Code</li>
-        <li class="list-group-item">Milk</li>
-        <li class="list-group-item">PavBhaji</li> */}
-        {foodItems.map((item) => <li key={item} className="list-group-item">{item}</li>)}
-      </ul>
+      {/* Child Props (use using {props.children})*/}
+      <Container>
+        <h1 className="food-heading">Healthy Food</h1>
+        <ErrorMessage items={foodItems}></ErrorMessage>
+        <FoodInput handleOnChange={handleOnChange}></FoodInput>
+        <p>{textToShow}</p>
+        <FoodItems items={foodItems}></FoodItems>
+      </Container>
+
+      {/* <Container>
+      <p>
+        Above is the list of healthy foods that are good for your health and well being.
+      </p>
+    </Container> */}
+
+      {/* clickable action events */}
     </>
   );
 }
+
 export default App;
